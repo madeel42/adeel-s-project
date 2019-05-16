@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>olx</title>
+</head>
+<style>
+
+.adtags{
+    border: 1px solid black;
+    width: 255px;
+    height: 237px;
+    position: relative;
+    
+}
+#main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    align-content: space-evenly;
+        height: 90vh;
+}
+.adpicture{
+    max-height: 48%;
+    margin-top: 9px;
+    max-width: 78%;
+}
+.detailsBox{
+    text-align: left;
+    position: absolute;
+    margin-top: 16%;
+    padding-left: 8%;
+}
+.titletag{
+    font-family: monospace;
+}
+.pricetag{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.featuredtag{
+    position: absolute;
+    left: 18px;
+    top: 15px;
+    background-color: #f8dd3c;
+}
+
+    
+    .lalblebar{
+    width: 6px;
+    height: 100px;
+    background-color: #f8dd3c;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+
+    
+</style>
+<body>
+    <!-- <div id="myfile"></div>
+    <div id="imagfile"></div> -->
+    <!-- <div id="box1">
+        <img src="car.png" width="170px" id="imag">
+        <h4>Rs 2500</h4> -->
+
+    <!-- </div> -->
+    <div id="main"></div>
+    <script>
+    
+    // let box = [
+    //     "Fresh recomentdation",
+    // ];
+    //     for(let item of box){
+    //     let newelement = document.createElement("h1");
+    //     newelement.innerHTML = item;
+    //     myfile.appendChild(newelement);
+    //     // document.body.appendChild(newelement);
+    // }    
+    // let user = [
+    //     "car.png",
+    // ]
+    // for(let abc of user){
+    //     let newe = document.createElement("img");
+    //     newe.innerHTML = abc;
+    //     imagfile.appendChild(newe);
+
+    // }
+
+
+
+    
+    // function work(){
+    //     var c = document.getElementById("imag");
+    //     var imgarry = ["car.png"];
+    // }
+    let data = [
+        {
+              src : "image (1).webp",
+              title : "this is title 1",
+              price : " RS: 30000",
+              
+        },
+        {
+              src : "image (2).webp",
+              title : "this is title 2",
+              price : "RS: 36000",
+             
+        },
+        {
+              src : "image (2).webp",
+              title : "this is title 3",
+              price : "RS: 36000",
+              featured : "featured",
+              featured : true,
+        },
+        {
+              src : "image (3).webp",
+              title : "this is title 4",
+              price : "RS: 56900",
+            
+        },
+        {
+              src : "image (2).webp",
+              title : "this is title 5",
+              price : "RS: 36000",
+              featured : true,
+        },
+        {
+              src : "image (4).webp",
+              title : "this is title 6",
+              price : "RS: 7800",
+              
+        },
+        {
+              src : "image (5).webp",
+              title : "this is title 7",
+              price : "RS: 32000",
+              featured : true,
+        },
+        {
+              src : "image (4).webp",
+              title : "this is title 8",
+              price : "RS: 7800000",
+              featured : true,
+        },
+        {
+              src : "image (5).webp",
+              title : "this is title 9",
+              price : "RS: 35000",
+              featured : true,
+        },
+        {
+              src : "image (6).webp",
+              title : "this is title 10",
+              price : "RS: 3000",
+              featured : true,
+        },
+    ];
+    function renderElmnts() {
+
+    data.forEach(function(item){
+        if(!item.noInterested){
+            
+       let adtags = document.createElement("div");
+       adtags.setAttribute("class","adtags");
+       let adpicture = document.createElement("img");
+       adpicture.setAttribute("class","adpicture");
+       adpicture.src = item.src;
+       adtags.appendChild(adpicture);
+       main.appendChild(adtags);
+let detailsBox = document.createElement("div");
+detailsBox.setAttribute("class","detailsBox");
+let pricetag = document.createElement("div");
+pricetag.setAttribute("class","pricetag");
+pricetag.innerText = item.price;
+adtags.appendChild(detailsBox);
+detailsBox.appendChild(pricetag);
+let titletag = document.createElement("div");
+titletag.setAttribute("class","titletag");
+titletag.innerHTML = item.title;
+detailsBox.appendChild(titletag);
+if(item.featured){
+    let featuredtag = document.createElement("span");
+featuredtag.setAttribute("class","featuredtag")
+featuredtag.innerHTML = "FEATURED";
+adtags.appendChild(featuredtag);
+let lalblebar = document.createElement("div");
+lalblebar.setAttribute("class","lalblebar");
+detailsBox.appendChild(lalblebar);
+}
+let ntbtntag = document.createElement("button");
+ntbtntag.innerHTML = "NOT interested";
+detailsBox.appendChild(ntbtntag);
+
+ntbtntag.onclick = function () {
+    if(item.noInterested = !item.noInterested){
+    
+    main.innerHTML = " ";
+    renderElmnts();
+    adtags.style.opacity = 0.5;
+
+// item.noInterested = !item.noInterested ? adtags.style.opacity = 0.5 : adtags.style.opacity = 1;
+}else{
+    adtags.style.opacity = 1;
+}
+}
+
+
+        
+        }
+
+    })
+    }
+    renderElmnts();
+
+let num = 10;
+ num == 10 ? console.log("this is a number") : console.log("it is not a number");
+    </script>
+</body>
+</html>
